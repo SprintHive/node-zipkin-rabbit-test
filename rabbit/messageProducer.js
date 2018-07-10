@@ -21,6 +21,7 @@ const sendMessageToRabbit = (action$, {rabbitConnection$, tracer}) => {
     .combineLatest(rabbitConnection$, (action, rabbitConnection) => ({action, rabbitConnection}))
     .do(({action, rabbitConnection}) => {
 
+      // Here we create a new trace and generate the zipkin headers
       tracer.scoped(() => {
         tracer.setId(tracer.createChildId());
         const traceId = tracer.id;

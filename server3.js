@@ -23,7 +23,7 @@ const tracer = new Tracer({
 // Add the Zipkin middleware
 app.use(zipkinMiddleware({tracer}));
 
-app.get('/', (req, res) => res.send("Lai Lam"));
+app.get('/', (req, res) => res.send("Boy"));
 
 
 const server = http.listen(port, () => {

@@ -62,8 +62,18 @@ hit the "Find traces" button and you should see some traces.
 ![Screen shot of step1](https://github.com/SprintHive/node-zipkin-rabbit-test/blob/master/docs/step1.png)
 
  
+## Zipkin meets RabbitMQ 
+
+The [http://localhost:3701/step2]() endpoint sends a message off to rabbit with extra headers and when we get the message back we 
+check for the headers and send a trace to zipkin.
+
+The zipkin ui should look something like this:
+
+![Screen shot of step2](https://github.com/SprintHive/node-zipkin-rabbit-test/blob/master/docs/step2.png)
+ 
+ 
  ## References 
  
-https://www.linkedin.com/pulse/distributed-tracing-nodejs-zipkin-kevin-greene/
+https://www.linkedin.com/pulse/distributed-tracing-nodejs-zipkin-kevin-greene/  
 https://github.com/openzipkin/zipkin-js
  

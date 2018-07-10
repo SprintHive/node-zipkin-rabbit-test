@@ -1,6 +1,5 @@
 const {Observable} = require("rxjs");
 const {Annotation, TraceId, option} = require("zipkin");
-
 const {Some} = option;
 
 function stringToBoolean(str) {
@@ -28,21 +27,20 @@ const listForRabbitMessages = (action$, {rabbitConnection$, tracer}) => {
         console.log("Received a message from rabbit", payload);
         console.log("Message properties", props.headers);
 
+        // Check to see if we have a zipkin traceId in the header
         const traceId = props.headers['X-B3-TraceId'];
         if (traceId) {
           tracer.scoped(function () {
             const parentId = props.headers['X-B3-ParentSpanId'];
             const spanId = props.headers['X-B3-SpanId'];
             const sampled = props.headers['X-B3-Sampled'];
-
-            const t = new TraceId({
+            // Create a new TraceId and with the same traceId
+            tracer.setId(new TraceId({
               traceId: new Some(traceId),
               parentId: new Some(parentId),
               sampled: new Some(stringToBoolean(sampled)),
               spanId
-            });
-
-            tracer.setId(t);
+            }));
             tracer.recordBinary('message', "Got message back from rabbit");
             tracer.recordAnnotation(new Annotation.ServerRecv());
           });

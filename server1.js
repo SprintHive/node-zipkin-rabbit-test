@@ -54,7 +54,7 @@ app.get('/step1', (req, res) => {
   res.send("Hello world!!!")
 });
 
-app.get('/', (req, res) => {
+app.get('/step2', (req, res) => {
   action$.next({type: "SEND_MESSAGE_TO_RABBIT", payload: {message: "Jon here"}});
 
   Promise.all([
