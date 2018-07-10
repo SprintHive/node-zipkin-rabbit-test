@@ -1,0 +1,18 @@
+{
+  "name": "node-zipkin-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "amqplib": "^0.5.2",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "node-fetch": "^2.1.2",
+    "rxjs": "5.5.11",
+    "zipkin": "^0.13.0",
+    "zipkin-context-cls": "^0.13.0",
+    "zipkin-instrumentation-express": "^0.13.0",
+    "zipkin-instrumentation-fetch": "^0.13.0",
+    "zipkin-transport-http": "^0.13.0"
+  }
+}
