@@ -59,11 +59,8 @@ Browse to [http://localhost:3701/step1]() and then open up the zipkin ui [http:/
 hit the "Find traces" button and you should see some traces. 
 
 
+![Screen shot of step1](https://github.com/SprintHive/node-zipkin-rabbit-test/blob/master/docs/step1.png)
 
-[logo]: https://github.com/SprintHive/node-zipkin-rabbit-test/blob/master/docs/step1.png "Screen shot of step1"
-
-## 
- 
  
  ## References 
  
