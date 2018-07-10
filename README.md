@@ -46,8 +46,7 @@ goes through node express a rabbit queue to another 2 services and then back.
     app.use(zipkinMiddleware({tracer})); 
 ``` 
 
-Here is our helloworld endpoint if you browse to http://localhost:3701/step1 
-and then open up the zipkin ui http://localhost:9411, hit the "Find traces" button and you should see some traces 
+Here is our helloworld endpoint. 
 
     # server1.js
     ....
@@ -56,8 +55,12 @@ and then open up the zipkin ui http://localhost:9411, hit the "Find traces" butt
     });
     ....
 
+Browse to [http://localhost:3701/step1]() and then open up the zipkin ui [http://localhost:9411](), 
+hit the "Find traces" button and you should see some traces. 
 
-[logo]: ./docs/step1.png "Screen shot of step1"
+
+
+[logo]: https://github.com/SprintHive/node-zipkin-rabbit-test/blob/master/docs/step1.png "Screen shot of step1"
 
 ## 
  
